@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Datapecker.DAL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Datapecker.DAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ExceptionEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientRegisteredTimeUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionDetails" nillable="true" type="tns:ArrayOfExceptionDetails" />
+      <xs:element minOccurs="0" name="SubmitterClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmitterLine" type="xs:int" />
+      <xs:element minOccurs="0" name="SubmitterMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmitterModule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmitterStackTrace" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionEvent" nillable="true" type="tns:ExceptionEvent" />
+  <xs:complexType name="ArrayOfExceptionDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExceptionDetails" nillable="true" type="tns:ExceptionDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExceptionDetails" nillable="true" type="tns:ArrayOfExceptionDetails" />
+  <xs:complexType name="ExceptionDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetailOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="ExceptionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetDeclaringType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetLine" type="xs:int" />
+      <xs:element minOccurs="0" name="TargetMetadataToken" type="xs:int" />
+      <xs:element minOccurs="0" name="TargetMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetModule" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionDetails" nillable="true" type="tns:ExceptionDetails" />
+  <xs:complexType name="ArrayOfCustomEventCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomEventCase" nillable="true" type="tns:CustomEventCase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomEventCase" nillable="true" type="tns:ArrayOfCustomEventCase" />
+  <xs:complexType name="CustomEventCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientRegisteredTimeUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventKey" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NumericProperties" nillable="true" type="q1:ArrayOfKeyValueOfstringdouble" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StringProperties" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomEventCase" nillable="true" type="tns:CustomEventCase" />
+</xs:schema>

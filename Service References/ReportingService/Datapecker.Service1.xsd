@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Datapecker.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Datapecker.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Datapecker.BL" />
+  <xs:complexType name="ApplicationCredentials">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecretKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationCredentials" nillable="true" type="tns:ApplicationCredentials" />
+  <xs:complexType name="ArrayOfExceptionTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExceptionTime" nillable="true" type="tns:ExceptionTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExceptionTime" nillable="true" type="tns:ArrayOfExceptionTime" />
+  <xs:complexType name="ExceptionTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionTime" nillable="true" type="tns:ExceptionTime" />
+  <xs:complexType name="AgentState">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AgentVersion" nillable="true" type="q1:Version" />
+      <xs:element minOccurs="0" name="IsDebug" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StorageWorking" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgentState" nillable="true" type="tns:AgentState" />
+  <xs:complexType name="ServerUpdates">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="KnownExceptionEventsToken" type="ser:guid" />
+      <xs:element minOccurs="0" name="ReportInterval" type="ser:duration" />
+      <xs:element minOccurs="0" name="SettingsToken" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerUpdates" nillable="true" type="tns:ServerUpdates" />
+  <xs:complexType name="AgentSettings">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Datapecker.BL" minOccurs="0" name="ApplicationSettings" nillable="true" type="q3:ArrayOfGroupEntry" />
+      <xs:element minOccurs="0" name="SettingsToken" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgentSettings" nillable="true" type="tns:AgentSettings" />
+  <xs:complexType name="KnownExceptionsState">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventKeys" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Token" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KnownExceptionsState" nillable="true" type="tns:KnownExceptionsState" />
+</xs:schema>

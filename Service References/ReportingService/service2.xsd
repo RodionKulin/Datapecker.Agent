@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Datapecker.Service" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Datapecker.DAL" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Datapecker.BL" />
+  <xs:element name="ReportException">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="credentials" nillable="true" type="q1:ApplicationCredentials" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Datapecker.DAL" minOccurs="0" name="exceptionEvent" nillable="true" type="q2:ExceptionEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportExceptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportExceptionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportExceptionCases">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="credentials" nillable="true" type="q3:ApplicationCredentials" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="cases" nillable="true" type="q4:ArrayOfExceptionTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportExceptionCasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportExceptionCasesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportCustomEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="credentials" nillable="true" type="q5:ApplicationCredentials" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Datapecker.DAL" minOccurs="0" name="cases" nillable="true" type="q6:ArrayOfCustomEventCase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportCustomEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportCustomEventsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="credentials" nillable="true" type="q7:ApplicationCredentials" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Datapecker.BL" minOccurs="0" name="customState" nillable="true" type="q8:ArrayOfGroupEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportStateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerUpdates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="credentials" nillable="true" type="q9:ApplicationCredentials" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="agentState" nillable="true" type="q10:AgentState" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServerUpdatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="GetServerUpdatesResult" nillable="true" type="q11:ServerUpdates" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAgentSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="credentials" nillable="true" type="q12:ApplicationCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAgentSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="GetAgentSettingsResult" nillable="true" type="q13:AgentSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKnownExceptionEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="credentials" nillable="true" type="q14:ApplicationCredentials" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKnownExceptionEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Datapecker.Service" minOccurs="0" name="GetKnownExceptionEventsResult" nillable="true" type="q15:KnownExceptionsState" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

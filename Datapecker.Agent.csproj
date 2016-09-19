@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FCF3CBF-CE03-4435-9672-0454569BDBF2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Datapecker.Agent</RootNamespace>
+    <AssemblyName>Datapecker.Agent</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Configuration\TypeFinder\TypeFinder%271.cs" />
+    <Compile Include="Model\Configuration\TypeFinder\TypeFinder%272.cs" />
+    <Compile Include="Model\DataSources\ExceptionEvents\DetailsIDProvider.cs" />
+    <Compile Include="Model\DataSources\InstanceState\StateProviderContext.cs" />
+    <Compile Include="Model\DataSources\InstanceState\GroupEntry.cs" />
+    <Compile Include="Model\Configuration\Attributes\StateProviderAttribute.cs" />
+    <Compile Include="Model\Configuration\AppConfig\TargetCollection.cs" />
+    <Compile Include="Model\Configuration\AppConfig\TargetElement.cs" />
+    <Compile Include="Model\Configuration\AppConfig\StateProviderCollection.cs" />
+    <Compile Include="Model\Configuration\AppConfig\StateProviderElement.cs" />
+    <Compile Include="Model\Configuration\Model\ConfigElementBase.cs" />
+    <Compile Include="Model\Configuration\Model\TargetConfig.cs" />
+    <Compile Include="Model\Configuration\Model\StateProviderConfig.cs" />
+    <Compile Include="Model\Configuration\ConfigBuildContext.cs" />
+    <Compile Include="Model\Configuration\TypeFinder\TypeFinder.cs" />
+    <Compile Include="Model\AgentConstants.cs" />
+    <Compile Include="Model\Configuration\ConfigManager.cs" />
+    <Compile Include="Model\DataSources\InternalLogger\ExceptionType.cs" />
+    <Compile Include="Model\DataSources\InternalLogger\IInternalLogger.cs" />
+    <Compile Include="Model\DataSources\InternalLogger\InternalLogger.cs" />
+    <Compile Include="Model\DatapeckerManager.cs" />
+    <Compile Include="Model\Configuration\AppConfig\DatapeckerSection.cs" />
+    <Compile Include="Model\Extensions\GroupEntryExtensions.cs" />
+    <Compile Include="Model\Extensions\StringExtensions.cs" />
+    <Compile Include="Model\ServiceConnection\Queries\IServiceQueries.cs" />
+    <Compile Include="Model\ServiceConnection\ReportingState.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceManagerTasks\IServiceManagerTask.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceManagerTasks\RegisterStateProviderTask.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceManagerTasks\RegisterTargetTask.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceManagerTasks\ClearAllTask.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceWorkers\ExceptionsServiceWorker.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceWorkers\IServiceWorker.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceManager.cs" />
+    <Compile Include="Model\ServiceConnection\Queries\ServiceQueries.cs" />
+    <Compile Include="Model\DataSources\ExceptionEvents\ExceptionEventCreator.cs" />
+    <Compile Include="Model\DataSources\ExceptionEvents\ExceptionStorageManager.cs" />
+    <Compile Include="Model\Configuration\Model\ConfigModel.cs" />
+    <Compile Include="Model\DataSources\Caller.cs" />
+    <Compile Include="Model\DataSources\InstanceState\IStateProvider.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceWorkers\CustomEventServiceWorker.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceWorkers\ReportStateServiceWorker.cs" />
+    <Compile Include="Model\ServiceConnection\TargetContext.cs" />
+    <Compile Include="Model\ServiceConnection\ServiceWorkers\UpdatesServiceWorker.cs" />
+    <Compile Include="Model\Storage\Queries\ExceptionStorageQueries.cs" />
+    <Compile Include="Model\Storage\Queries\CustomEventStorageQueries.cs" />
+    <Compile Include="Model\Storage\Queries\IExceptionStorageQueries.cs" />
+    <Compile Include="Model\Storage\Queries\SettingsStorageQueries.cs" />
+    <Compile Include="Model\Storage\StorageType.cs" />
+    <Compile Include="Model\Storage\FileStorage.cs" />
+    <Compile Include="Model\DataSources\ICaller.cs" />
+    <Compile Include="Model\Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Model\Utility\Time\NonReentrantTimer.cs" />
+    <Compile Include="Model\Utility\Wcf\WcfSafeCall.cs" />
+    <Compile Include="Model\Utility\Wcf\WcfSafeCallExceptionArg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\MessageResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReportingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DatapeckerSection.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Service References\ReportingService\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\Datapecker.Agent.ReportingService.AgentSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingService\Datapecker.Agent.ReportingService.KnownExceptionsState.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingService\Datapecker.Agent.ReportingService.ServerUpdates.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingService\Datapecker.BL1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\Datapecker.DAL1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\Datapecker.Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\InsightsPlatform.BL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\InsightsPlatform.DAL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\InsightsPlatform.Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\MongoDB.Bson.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\service1.wsdl" />
+    <None Include="Service References\ReportingService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportingService\System1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ReportingService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MessageResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
